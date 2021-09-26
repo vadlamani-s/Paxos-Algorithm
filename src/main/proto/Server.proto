@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package com.example.grpc;
+
+service ServerRPC {
+  rpc dictionaryServerOperation(RequestServer) returns (ResponseServer);
+  rpc initializationServer(RequestServer) returns (ResponseServer);
+  rpc prepare(RequestServer) returns (ResponseServer);
+  rpc accept(RequestServer) returns (ResponseServer);
+  rpc learn(RequestServer) returns (ResponseServer);
+}
+
+// Request framework
+message RequestServer {
+  string requestMessage = 1;
+  string operation = 2;
+  int64 key = 3;
+  string value = 4;
+}
+
+// Response framework
+message ResponseServer {
+  string responseMessage = 1;
+}
