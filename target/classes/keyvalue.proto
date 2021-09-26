@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package com.example.grpc;
+
+service keyValueStore {
+  rpc dictionaryOperation(RequestOperation) returns (ResponseOperation);
+}
+
+// Request framework
+message RequestOperation {
+  string operation = 1;
+  int64 key = 2;
+  string value = 3;
+}
+
+// Response framework
+message ResponseOperation {
+  string response = 1;
+}
+

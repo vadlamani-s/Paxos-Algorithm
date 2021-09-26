@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <ant antfile="../core/generate-test-sources-build.xml"/>
+  <exec executable="C:\Users\Satyanarayana\Documents\CS6650_New\Project2\java\util/../../src/protoc">
+    <arg value="--java_out=C:\Users\Satyanarayana\Documents\CS6650_New\Project2\java\util\target/generated-test-sources"/>
+    <arg value="--proto_path=C:\Users\Satyanarayana\Documents\CS6650_New\Project2\java\util/../../src"/>
+    <arg value="--proto_path=src/test/proto"/>
+    <arg value="src/test/proto/com/google/protobuf/util/json_test.proto"/>
+  </exec>
+</target>
+</project>

@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package com.example.grpc;
+
+service Coordinator {
+  rpc dictionaryCoordinator(RequestCoordinator) returns (ResponseCoordinator);
+  rpc initialization(RequestCoordinator) returns (ResponseCoordinator);
+  rpc initPrepare(RequestCoordinator) returns (ResponseCoordinator);
+}
+
+// Request framework
+message RequestCoordinator {
+  string requestMessage = 1;
+  string operation = 2;
+  int64 key = 3;
+  string value = 4;
+}
+
+// Response framework
+message ResponseCoordinator {
+  string responseMessage = 1;
+}
